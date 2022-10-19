@@ -1,9 +1,9 @@
 
-public class HelloWorldDecoratorRepository : IRepository
+public class PostRepoFirstDecoratorRepository : IRepository
 {
     private readonly IRepository _innerRepository;
 
-    public HelloWorldDecoratorRepository(IRepository innerRepository)
+    public PostRepoFirstDecoratorRepository(IRepository innerRepository)
     {
         _innerRepository = innerRepository;
     }
@@ -11,6 +11,6 @@ public class HelloWorldDecoratorRepository : IRepository
     public void Save()
     {
         _innerRepository.Save();
-        Console.WriteLine("Hello World Decorator");
+        Console.WriteLine("After save 1");
     }
 }

@@ -5,7 +5,9 @@ using IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices((_, services) =>
         services.AddSingleton<ISampleService, SampleService>()
             .AddSingleton<IRepository, StoreRepository>()
-            .Decorate<IRepository, HelloWorldDecoratorRepository>())
+            .Decorate<IRepository, PreRepoDecoratorRepository>()
+            .Decorate<IRepository, PostRepoSecondDecoratorRepository>()
+            .Decorate<IRepository, PostRepoFirstDecoratorRepository>())
     .Build();
 
 Execute(host.Services);
